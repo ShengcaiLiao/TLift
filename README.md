@@ -6,11 +6,7 @@ The code is tested in Octave 4.2.2. For usage please read the help in the TLift 
 
 The DukeMTMC-reID dataset has a good global and continuous record of frame numbers, and it is synchronized by providing offset times. In contrast, the Market-1501 dataset only has independent frame numbers for each session of videos from each camera. For several sessions from each camera, we roughly calculated the overall time frames of each session as offset, and made a cumulative record by assuming the video sessions were continuously recorded. After that, frame numbers were converted to seconds in time by dividing the Frames Per Second (FPS) in video records, where FPS=60 for the DukeMTMC-reID dataset and FPS=25 for the Market-1501 dataset.
 
-Default parameters are K = tau = sigma = 100. For robustness in various scenarios, a score fusion with the original similarity score is usually help. We do the followings for min-max score normalization and weighted score fusion, with lambda=0.1.
-
-score = (score - min(score(:))) / range(score(:));
-score_time = (score_time - min(score_time(:))) / range(score_time(:));
-score = score_time + lambda * score;
+Default parameters are K = tau = sigma = 100. For robustness in various scenarios, a score fusion with the original similarity score is usually help. We do min-max score normalization and weighted score fusion, with lambda=0.1.
 
 
 # Reference:
