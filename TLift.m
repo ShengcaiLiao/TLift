@@ -1,5 +1,5 @@
 function out_score = TLift(in_score, gal_cam_id, gal_time, prob_cam_id, prob_time, ...
-num_cams, tau, sigma, K)
+num_cams, tau, sigma, K, lambda)
 %% Function for the Temporal Lifting (TLift) method
 %  TLift is a model-free temporal cooccurrence based score weighting method proposed in 
 %  "Interpretable and Generalizable Deep Image Matching with Query-adaptive Convolutions".
@@ -13,6 +13,7 @@ num_cams, tau, sigma, K)
 %      tau: the interval threshold to define nearby persons.
 %      sigma: the sensitivity parameter of the time difference.
 %      K: parameter of the top K retrievals used to define the pivot set P.
+%      lambda: parameter for score fusion.
 %      All the cam_id and time inputs are column vectors, and they are in the same order corresponding to 
 %      rows (gallery) or columns (probe) of the in_score.
 %  Outputs:
@@ -71,3 +72,7 @@ for p_cam = 1 : num_cams
         end
     end
 end
+
+in_score = (in_score - min(in_score(:))) / range(in_score(:));
+out_score = (out_score - min(out_score(:))) / range(out_score(:));
+out_score = out_score + lambda * in_score;
