@@ -43,7 +43,7 @@ for g_cam = 1 : num_cams
     score{g_cam} = in_score(g_sam_index{g_cam}, :);
     frame_id = gal_time(g_sam_index{g_cam});
     gal_time_diff{g_cam} = frame_id - frame_id';
-end  
+end
 
 for p_cam = 1 : num_cams
     p_sam_index = find(prob_cam_id == p_cam);
@@ -56,8 +56,6 @@ for p_cam = 1 : num_cams
         end
         
         prob_score = score{g_cam}(:, p_sam_index);
-        coo_dt = prob_time_diff(p_sam_index, p_sam_index);
-        coo_w = exp(-coo_dt.^2 / sigma^2);
         
         for i = 1 : np        
             cooccur_index = find(c_mask(:, i));
