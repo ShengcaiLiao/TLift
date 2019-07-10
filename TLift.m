@@ -56,7 +56,7 @@ for p_cam = 1 : num_cams
         end
         
         prob_score = score{g_cam}(:, p_sam_index);
-        
+
         for i = 1 : np        
             cooccur_index = find(c_mask(:, i));
             cooccur_score = prob_score(:, cooccur_index);
