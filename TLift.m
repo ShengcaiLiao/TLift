@@ -13,7 +13,7 @@ num_cams, tau, sigma, K, alpha)
 %      tau: the interval threshold to define nearby persons.
 %      sigma: the sensitivity parameter of the time difference.
 %      K: parameter of the top K retrievals used to define the pivot set P.
-%      alpha: parameter for score fusion.
+%      alpha: regularizer for the multiplication fusion.
 %      All the cam_id and time inputs are column vectors, and they are in the same order corresponding to 
 %      rows (gallery) or columns (probe) of the in_score.
 %  Outputs:
@@ -68,11 +68,9 @@ for p_cam = 1 : num_cams
             
             dt = gal_time_diff{g_cam}(:, mask_in_gal);
             weight = mean(exp(-dt.^2 / sigma^2), 2);
-            out_score(g_sam_index{g_cam}, p_sam_index(i)) = weight .* prob_score(:, i);
+            out_score(g_sam_index{g_cam}, p_sam_index(i)) = weight;
         end
     end
 end
 
-in_score = (in_score - min(in_score(:))) / range(in_score(:));
-out_score = (out_score - min(out_score(:))) / range(out_score(:));
-out_score = out_score + alpha * in_score;
+out_score = (out_score + alpha) .* in_score;
