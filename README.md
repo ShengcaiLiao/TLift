@@ -21,5 +21,12 @@ for the DukeMTMC-reID dataset and FPS=25 for the Market-1501 dataset.
 Default parameters are K = tau = sigma = 100, and alpha = 0.1.
 
 
-# Reference:
-[1] Shengcai Liao and Ling Shao, "Interpretable and Generalizable Person Re-identification with Query-adaptive Convolution and Temporal Lifting." In arXiv preprint, arXiv:1904.10424, 2019.
+# Citation
+[1] Shengcai Liao and Ling Shao, "Interpretable and Generalizable Person Re-identification with Query-adaptive Convolution and Temporal Lifting." In the 16th European Conference on Computer Vision (ECCV), 23-28 August, 2020.
+
+@inproceedings{Liao-ECCV2020-QAConv,  
+  title={Interpretable and Generalizable Person Re-identification with Query-adaptive Convolution and Temporal Lifting},  
+  author={Wen, Yandong and Zhang, Kaipeng and Li, Zhifeng and Qiao, Yu},  
+  booktitle={European conference on computer vision (ECCV)},  
+  year={2020}  
+}
