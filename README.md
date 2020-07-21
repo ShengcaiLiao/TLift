@@ -18,7 +18,7 @@ offset, and made a cumulative record by assuming the video sessions were continu
 numbers were converted to seconds in time by dividing the Frames Per Second (FPS) in video records, where FPS=59.94 
 for the DukeMTMC-reID dataset and FPS=25 for the Market-1501 dataset.
 
-Default parameters are K = tau = sigma = 100, and alpha = 0.1.
+Default parameters are tau=100, sigma=200, K=10, and alpha=0.2. They are not sensitive in a broad range, as analyzed in the Appendix of our paper [1].
 
 
 # Citation
