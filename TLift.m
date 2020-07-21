@@ -1,8 +1,8 @@
 function out_score = TLift(in_score, gal_cam_id, gal_time, prob_cam_id, prob_time, ...
 num_cams, tau, sigma, K, alpha)
 %% Function for the Temporal Lifting (TLift) method
-%  TLift is a model-free temporal cooccurrence based score weighting method proposed in 
-%  "Interpretable and Generalizable Deep Image Matching with Query-adaptive Convolutions".
+%  TLift is a model-free temporal cooccurrence based score weighting method proposed in "Interpretable and Generalizable Person Re-identification with Query-adaptive
+%      Convolution and Temporal Lifting".
 %  Inputs:
 %      in_score: the similarity score of size [num_gals, num_probs] between the gallery and probe sets.
 %      gal_cam_id: camera index for samples in the gallery set.
@@ -24,8 +24,8 @@ num_cams, tau, sigma, K, alpha)
 %      Shengcai Liao
 %      scliao@ieee.org
 %  Reference:
-%      Shengcai Liao and Ling Shao, "Interpretable and Generalizable Deep Image Matching with 
-%      Adaptive Convolutions." In arXiv preprint, arXiv:1904.10424, 2019.
+%      Shengcai Liao and Ling Shao, "Interpretable and Generalizable Person Re-identification with Query-adaptive
+%      Convolution and Temporal Lifting." In The European Conference on Computer Vision (ECCV), 23-28 August, 2020.
 
 
 num_gals = length(gal_time);
