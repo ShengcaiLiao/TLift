@@ -27,6 +27,6 @@ Default parameters are tau=100, sigma=200, K=10, and alpha=0.2. They are not sen
 @inproceedings{Liao-ECCV2020-QAConv,  
   title={{Interpretable and Generalizable Person Re-Identification with Query-Adaptive Convolution and Temporal Lifting}},  
   author={Shengcai Liao and Ling Shao},  
-  booktitle={European conference on computer vision (ECCV)},  
+  booktitle={European Conference on Computer Vision (ECCV)},  
   year={2020}  
 }
